@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Laura, eu te amo!&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ff4d6d;
+        }
+        p {
+            font-size: 1.5rem;
+            max-width: 600px;
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            bottom: -10px;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: float 6s linear infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: &quot;&quot;;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -15px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 15px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1) rotate(-45deg); opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) scale(1.5) rotate(-45deg); opacity: 0; }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Laura, eu te amo!&lt;/h1&gt;
+    &lt;p&gt;&quot;J'ai tant rêvé de toi que tu perds ta réalité.&quot;
+        &lt;br&gt;- Robert Desnos&lt;/p&gt;
+    &lt;div class=&quot;hearts&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        function createHeart() {
+            const heart = document.createElement(&quot;div&quot;);
+            heart.classList.add(&quot;heart&quot;);
+            heart.style.left = Math.random() * 100 + &quot;vw&quot;;
+            heart.style.animationDuration = (Math.random() * 3 + 3) + &quot;s&quot;;
+            document.querySelector(&quot;.hearts&quot;).appendChild(heart);
+            setTimeout(() =&gt; heart.remove(), 6000);
+        }
+        setInterval(createHeart, 300);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
